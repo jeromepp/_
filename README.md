@@ -1,6 +1,6 @@
 # Rubitcoin
 
-TODO: Write a gem description
+Super simple Bitcoin ticker.
 
 ## Installation
 
@@ -18,10 +18,18 @@ Or install it yourself as:
 
     $ gem install rubitcoin
 
-## Usage
+## How to
 
-TODO: Write usage instructions here
+```rb
+require 'rubitcoin'
 
+Rubitcoin.fetch
+#=> {:high=>223.15, :last=>208.39, :timestamp=>1421461371.0, :bid=>207.95, :vwap=>210.62, :volume=>32705.34241534, :low=>198.04, :ask=>208.21}
+
+Rubitcoin.high
+#=> 223.15
+
+```
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/Rubitcoin/fork )
