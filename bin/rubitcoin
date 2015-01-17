@@ -1,3 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'rubitcoin'
+require 'awesome_print'
+
+loop do
+  ap Rubitcoin.fetch
+  sleep 1
+end
