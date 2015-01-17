@@ -1,9 +1,23 @@
 #!/usr/bin/env ruby
 
 require 'rubitcoin'
-require 'awesome_print'
+
+class String
+  def red
+    "\e[31m#{self}\e[0m"
+  end
+
+  def blue
+    "\e[36m#{self}\e[0m"
+  end
+end
 
 loop do
-  ap Rubitcoin.fetch
-  sleep 1
+  rslt = Rubitcoin.fetch
+  unless [@bid, @ask] == [rslt[:buy], rslt[:sell]]
+    @bid, @ask = rslt[:buy], rslt[:sell]
+    puts "BIT: #{@bid.to_s.blue}"
+    puts "ASK: #{@ask.to_s.red}"
+  end
+  sleep 0.5
 end
